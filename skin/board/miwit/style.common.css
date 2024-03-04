@@ -26,10 +26,11 @@ img {
 }
 
 #mw_basic {
-    font-size:12px;
+    x-font-size:14px;
     color:#000;
     text-align:left;
     overflow:hidden;
+	x-padding-right: 20px; 
 }
 
 #mw_basic form {
@@ -41,7 +42,7 @@ img {
 }
 
 #mw_basic td {
-    font-size:12px;
+    font-size:14px;
     color:#000;
 }
 
@@ -74,8 +75,8 @@ img {
     border-left:1px solid #9a9a9a;
     border-right:1px solid #d8d8d8;
     border-bottom:1px solid #d8d8d8;
-    height:20px;
-    font-size:12px;
+    x-height:20px;
+    font-size:14px;
     padding:2px;
 }
 
@@ -85,9 +86,9 @@ img {
     border-left:1px solid #9a9a9a;
     border-right:1px solid #d8d8d8;
     border-bottom:1px solid #d8d8d8;
-    font-size:12px;
+    font-size:14px;
     padding:5px;
-    line-height:18px;
+    line-height:150%;
     font-family:inherit;
     outline:0;
 }
@@ -776,14 +777,14 @@ img {
 #mw_basic .mw_basic_list_datetime {
     color:#888;
     color:#000;
-    font-size:11px;
+    font-size:12px;
 }
 
 /* 조회수 */
 #mw_basic .mw_basic_list_hit {
     color:#888;
     color:#000;
-    font-size:11px;
+    font-size:12px;
 }
 
 /* 추천수 */
@@ -1074,7 +1075,8 @@ img {
     background-color:#fff;
     line-height:22px;
     color:#000;
-    font-size:1.1em;
+    font-size:16px;
+	line-height:1.5; 
     font-family:inherit;
 }
 #mw_basic .mw_basic_view_content h1,
@@ -1857,39 +1859,44 @@ img {
 /* 항목 */
 #mw_basic .mw_basic_write_title {
     padding-left:20px; 
-    height:30px;
-    font-size:11px;
-    color:#888;
+    height:40px;
+    font-size:14px;
+    color:#666;
 }
 
 /* 항목 글자 */
 #mw_basic .mw_basic_write_title td {
-    font-size:11px;
-    color:#888;
+    font-size:14px;
+    color:#666;
 }
 
 /* 항목 내용 */
 #mw_basic .mw_basic_write_content {
-    font-size:11px;
-    color:#888;
+    font-size:14px;
+    color:#666;
 }
 
 /* 항목 내용 */
 #mw_basic .mw_basic_write_content select {
-    font-size:11px;
+    font-size:14px;
 }
 
 /* 항목 내용 */
 #mw_basic .mw_basic_write_content a {
-    font-size:11px;
-    color:#888;
+    font-size:14px;
+    color:#666;
+}
+
+/* 항목 내용 */
+#mw_basic .mw_basic_write_content .tempsave {
+    padding: 10px 0 20px;
 }
 
 /* 자동등록방지 설명문 */
 #mw_basic .mw_basic_norobot {
     margin:0 0 0 10px;
-    font-size:11px;
-    color:#888;
+    font-size:14px;
+    color:#666;
 }
 
 /********************
@@ -2073,6 +2080,7 @@ img {
 #mw_basic .comment_image {
     margin:0 10px 5px 0;
     text-align:center;
+	font-size: 11px; 
 }
 #mw_basic .comment_image img {
     width:58px;
@@ -2582,12 +2590,6 @@ i.fa-warning { color:#f36a2e; }
         height: 100%;
     }
 
-    .jwplayer *, .jwplayer *:before, .jwplayer *:after {
-        -webkit-box-sizing: content-box!important;
-        -moz-box-sizing: content-box!important;
-        box-sizing: content-box!important;
-    }
-
     #mw_basic .mw_basic_view_content img {
         max-width: 100% !important;
         max-height: 100%;
@@ -2882,7 +2884,7 @@ nav.pg_wrap {
 
 #mw_basic .view_buttons, 
 #mw_basic .view_buttons2 {
-    height:20px;
+    height:25px;
     display:table;
     margin-top:10px;
     width:100%;
@@ -2979,6 +2981,7 @@ nav.pg_wrap {
    user-select: none;
 }
 
+/*
 hr {
     display: block;
     margin-top: 0.5em;
@@ -2988,3 +2991,4 @@ hr {
     border-style: inset;
     border-width: 1px;
 }
+*/
