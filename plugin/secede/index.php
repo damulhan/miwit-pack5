@@ -5,7 +5,7 @@
  * Copyright (c) 2011 Choi Jae-Young <www.miwit.com>
  *
  * 저작권 안내
- * - 저작권자는 이 프로그램을 사용하므로서 발생하는 모든 문제에 대하여 책임을 지지 않습니다. 
+ * - 저작권자는 이 프로그램을 사용하므로서 발생하는 모든 문제에 대하여 책임을 지지 않습니다.
  * - 이 프로그램을 어떠한 형태로든 재배포 및 공개하는 것을 허락하지 않습니다.
  * - 이 저작권 표시사항을 저작권자를 제외한 그 누구도 수정할 수 없습니다.
  */
@@ -16,7 +16,7 @@ $is_builder = $g4['path'].'/lib/mw.builder.lib.php';
 if (is_file($is_builder))
     include_once($is_builder);
 
-$g4[title] = "회원탈퇴";
+$g4['title'] = "회원탈퇴";
 include_once("_head.php");
 
 if (defined('G5_PATH')) {
@@ -45,7 +45,7 @@ if (defined('G5_PATH')) {
 <div class="subject"><img src="img/title.gif"></div>
 <div class="content">
     <?php if (substr($member['mb_id'], 0, 1) != '@') { ?>
-    <div class="item"> 
+    <div class="item">
 	<div class="input-label">- 비밀번호를 입력해주세요. </div>
 	<div class="input-box"> <input type="password" name="mb_password" size="20" class="ed" required itemname="비밀번호"> </div>
     </div>

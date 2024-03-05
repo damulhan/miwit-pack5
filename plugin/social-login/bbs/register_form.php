@@ -1,7 +1,7 @@
 <?php
 include_once("_common.php");
 
-$g4[title] = "회원가입";
+$g4['title'] = "회원가입";
 include_once("_head.php");
 include_once("../_lib.php");
 
@@ -32,7 +32,7 @@ $skin = str_replace("include_once(\"./_tail.php\");", "", $skin);
 
 //g5
 $_POST['mb_id'] = $member['mb_id'];
-$skin = str_replace("include_once(\$member_skin_path.'/register_form.skin.php');", "", $skin); 
+$skin = str_replace("include_once(\$member_skin_path.'/register_form.skin.php');", "", $skin);
 $skin = str_replace("include_once('./_head.php');", "", $skin);
 $skin = str_replace("include_once('./_tail.php');", "", $skin);
 
@@ -57,7 +57,7 @@ if ($g4['https_url'])
     $skin = str_replace("register_form_update.php", "../plugin/social-login/bbs/register_form_update.php", $skin);
 
 if (defined('G5_BBS_URL'))
-    $skin = str_replace(G5_BBS_URL."/register_form_update.php", "./register_form_update.php", $skin); 
+    $skin = str_replace(G5_BBS_URL."/register_form_update.php", "./register_form_update.php", $skin);
 
 echo $skin;
 

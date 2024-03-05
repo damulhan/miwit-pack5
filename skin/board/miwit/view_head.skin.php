@@ -402,7 +402,7 @@ if ($mw_basic['cf_reward']) {
     }
     else
         //$reward['url'] = mw_get_reward_url($reward);
-        $reward['url'] = "$g4[path]/plugin/reward/go.php?bo_table=$bo_table&wr_id=$wr_id";
+        $reward['url'] = "{$g4['path']}/plugin/reward/go.php?bo_table=$bo_table&wr_id=$wr_id";
 
     if ($is_member)
 		$reward['script'] = "window.open('{$reward['url']}');";

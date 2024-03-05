@@ -1,7 +1,7 @@
 <?php
 include_once("_common.php");
 
-$g4[title] = "누적 포인트순위";
+$g4['title'] = "누적 포인트순위";
 include_once("_head.php");
 
 $rows = 100;
@@ -13,12 +13,12 @@ $i = 0;
 $list = array();
 while ($row = sql_fetch_array($qry)) {
     $mb = get_member($row[mb_id]);
-    if ($row[mb_id] == $config[cf_admin]) continue; 
+    if ($row[mb_id] == $config[cf_admin]) continue;
     if ($mb[mb_level] < 2) continue;
     if ($mb[mb_leave_datel] != "") continue;
     if ($mb[mb_intercept_datel] != "") continue;
     $list[$i][rank] = $i+1;
-    $list[$i][name] = get_sideview($mb[mb_id], $mb[mb_nick], $mb[mb_email]. $mb[mb_homepage]); 
+    $list[$i][name] = get_sideview($mb[mb_id], $mb[mb_nick], $mb[mb_email]. $mb[mb_homepage]);
     $list[$i][point] = number_format($row[point]);
     if (++$i >= $rows) break;
 }
@@ -38,12 +38,12 @@ $list_count = sizeof($list);
 .point-ranking .head { font-weight:bold; text-align:center; height:30px }
 .point-ranking .body { height:30px; padding:0; }
 .point-ranking .body .rank { width:50px; text-align:right; }
-.point-ranking .body .name { width:150px; text-align:left; padding-left:5px; } 
+.point-ranking .body .name { width:150px; text-align:left; padding-left:5px; }
 .point-ranking .body .point { width:100px; text-align:right; }
 .paging { clear:both; height:50px; text-align:center; margin:30px 0 0 0; }
 </style>
 
-<strong><?=$g4[title]?></strong> : - 포인트를 제외한 + 포인트값 순위입니다. 
+<strong><?=$g4['title']?></strong> : - 포인트를 제외한 + 포인트값 순위입니다.
 
 <div class="line"></div>
 

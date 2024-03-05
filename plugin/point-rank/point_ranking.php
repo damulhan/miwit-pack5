@@ -2,7 +2,7 @@
 include_once("_common.php");
 @include_once("$g4[path]/lib/mw.builder.lib.php");
 
-$g4[title] = "포인트순위";
+$g4['title'] = "포인트순위";
 include_once("_head.php");
 
 $sql_common = " from $g4[member_table] ";
@@ -35,7 +35,7 @@ $total_page  = ceil($total_count / $rows);  // 전체 페이지 계산
 if (!$page) $page = 1; // 페이지가 없으면 첫 페이지 (1 페이지)
 $from_record = ($page - 1) * $rows; // 시작 열을 구함
 
-$sql = "select mb_id, mb_name, mb_nick, mb_email, mb_homepage, mb_point 
+$sql = "select mb_id, mb_name, mb_nick, mb_email, mb_homepage, mb_point
 	$sql_common
 	$sql_where
 	$sql_order
@@ -45,7 +45,7 @@ $qry = sql_query($sql);
 $list = array();
 for ($i=0; $row=sql_fetch_array($qry); $i++) {
     $list[$i][rank] = number_format((($page - 1) * $rows) + $i + 1);
-    $list[$i][name] = get_sideview($row[mb_id], $row[mb_nick], $row[mb_email]. $row[mb_homepage]); 
+    $list[$i][name] = get_sideview($row[mb_id], $row[mb_nick], $row[mb_email]. $row[mb_homepage]);
     $list[$i][point] = number_format($row[mb_point]);
 }
 
@@ -63,7 +63,7 @@ $list_count = sizeof($list);
 .point-ranking .head { font-weight:bold; text-align:center; height:30px }
 .point-ranking .body { height:30px; padding:0; }
 .point-ranking .body .rank { width:50px; text-align:right; }
-.point-ranking .body .name { width:150px; text-align:left; padding-left:5px; } 
+.point-ranking .body .name { width:150px; text-align:left; padding-left:5px; }
 .point-ranking .body .point { width:100px; text-align:right; }
 .paging { clear:both; height:50px; text-align:center; margin:30px 0 0 0; }
 </style>

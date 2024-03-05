@@ -22,7 +22,7 @@
 include_once("_common.php");
 @include_once("$g4[path]/lib/mw.builder.lib.php");
 
-$g4[title] = "월별 포인트순위";
+$g4['title'] = "월별 포인트순위";
 include_once("_head.php");
 
 // 시작월
@@ -44,10 +44,10 @@ if (!in_array($month, $months))
 
 $rows = 100;
 
-$sql = "select mb_id, sum(po_point) as point, left(po_datetime, 7) as month 
-	  from $g4[point_table] 
-	 where left(po_datetime, 7) = '$month' 
-         group by mb_id, month 
+$sql = "select mb_id, sum(po_point) as point, left(po_datetime, 7) as month
+	  from $g4[point_table]
+	 where left(po_datetime, 7) = '$month'
+         group by mb_id, month
          order by point desc";
 $qry = sql_query($sql);
 
@@ -55,12 +55,12 @@ $i = 0;
 $list = array();
 while ($row = sql_fetch_array($qry)) {
     $mb = get_member($row[mb_id]);
-    if ($row[mb_id] == $config[cf_admin]) continue; 
+    if ($row[mb_id] == $config[cf_admin]) continue;
     if ($mb[mb_level] < 2) continue;
     if ($mb[mb_leave_datel] != "") continue;
     if ($mb[mb_intercept_datel] != "") continue;
     $list[$i][rank] = $i+1;
-    $list[$i][name] = get_sideview($mb[mb_id], $mb[mb_nick], $mb[mb_email]. $mb[mb_homepage]); 
+    $list[$i][name] = get_sideview($mb[mb_id], $mb[mb_nick], $mb[mb_email]. $mb[mb_homepage]);
     $list[$i][point] = number_format($row[point]);
     if (++$i >= $rows) break;
 }
@@ -68,7 +68,7 @@ while ($row = sql_fetch_array($qry)) {
 $list_count = sizeof($list);
 
 //$paging = get_paging($rows, $page, $total_page, "?page=");
- 
+
 ?>
 
 <script type="text/javascript" src="<?=$g4[path]?>/js/sideview.js"></script>
@@ -80,20 +80,20 @@ $list_count = sizeof($list);
 .point-ranking .head { font-weight:bold; text-align:center; height:30px }
 .point-ranking .body { height:30px; padding:0; }
 .point-ranking .body .rank { width:50px; text-align:right; }
-.point-ranking .body .name { width:150px; text-align:left; padding-left:5px; } 
+.point-ranking .body .name { width:150px; text-align:left; padding-left:5px; }
 .point-ranking .body .point { width:100px; text-align:right; }
 .paging { clear:both; height:50px; text-align:center; margin:30px 0 0 0; }
 </style>
 
 
-<strong><?=$g4[title]?></strong> 
+<strong><?=$g4['title']?></strong>
 &nbsp;&nbsp;&nbsp;
 <select id="month" name="month" onchange="location.href='<?=$_SERVER[PHP_SELF]?>?month='+this.value">;
 <? for ($i=$months_count-1; $i>=0; $i--) { ?>
 <option value="<?=$months[$i]?>"><?=$months[$i]?></option>
 <? } ?>
 </select>
-<script type="text/javascript"> document.getElementById("month").value = "<?=$month?>"; </script> 
+<script type="text/javascript"> document.getElementById("month").value = "<?=$month?>"; </script>
 
 <div class="line"></div>
 

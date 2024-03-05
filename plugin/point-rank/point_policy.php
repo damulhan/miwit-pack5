@@ -2,7 +2,7 @@
 include_once("_common.php");
 //include_once("$g4[path]/lib/mw.builder.lib.php");
 
-$g4[title] = "포인트 정책";
+$g4['title'] = "포인트 정책";
 include_once("_head.php");
 
 $list = array();
@@ -64,10 +64,10 @@ for ($i=0; $i<$loop_max; ++$i)
 </style>
 
 <div class="info-box">
-<div class='info'>·사이트에서는 회원님들의 각종 혜택을 위해 포인트 제도를 운영하고 있습니다.</div> 
-<div class='info'>·각 게시판 활동 포인트는 아래 표를 참고해주세요.</div> 
-<div class='info'>·포인트 정책은 수시로 변경될 수 있으며 이를 별도로 통보하지 않습니다.</div> 
-<div class='info'>·포인트 획득을 위해 도배, 의미없는 글을 작성하는 등의 행위는 통보없이 "포인트 몰수"  될 수 있습니다. </div> 
+<div class='info'>·사이트에서는 회원님들의 각종 혜택을 위해 포인트 제도를 운영하고 있습니다.</div>
+<div class='info'>·각 게시판 활동 포인트는 아래 표를 참고해주세요.</div>
+<div class='info'>·포인트 정책은 수시로 변경될 수 있으며 이를 별도로 통보하지 않습니다.</div>
+<div class='info'>·포인트 획득을 위해 도배, 의미없는 글을 작성하는 등의 행위는 통보없이 "포인트 몰수"  될 수 있습니다. </div>
 </div>
 <?
 if ($config[cf_register_point]) echo "<div class='info'>· 회원가입 포인트 : <strong>".number_format($config[cf_register_point])."</strong> 점</div>";
@@ -87,7 +87,7 @@ if ($config[cf_login_point]) echo "<div class='info'>· 로그인 포인트 : <s
     <td class="thead"> 다운로드 </td>
 </tr>
 <?php
-foreach ((array)$list as $row) { 
+foreach ((array)$list as $row) {
     $table = sql_fetch("select * from {$g5['board_table']} where bo_table = '{$row}' ");
     $url = mw_seo_url($row);
     echo "<tr>".PHP_EOL;

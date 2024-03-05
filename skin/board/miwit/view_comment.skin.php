@@ -55,7 +55,7 @@ if ($cwin && ($mw_basic['cf_must_notice_read'] || $mw_basic['cf_must_notice_comm
     $cnt_notice = sizeof(explode(",", $tmp_notice));
 
     if ($tmp_notice) {
-        $sql = "select count(*) as cnt from $mw[must_notice_table] where bo_table = '$bo_table' and mb_id = '{$member['mb_id']}' and wr_id in ($tmp_notice)";
+        $sql = "select count(*) as cnt from {$mw['must_notice_table']} where bo_table = '$bo_table' and mb_id = '{$member['mb_id']}' and wr_id in ($tmp_notice)";
         $row = sql_fetch($sql);
         if ($row['cnt'] != $cnt_notice)
             alert_close("$board[bo_subject] 공지를 모두 읽으셔야 글읽기가 가능합니다.");
@@ -1024,7 +1024,7 @@ $(document).ready(function () {
 <div style="height:7px; line-height:0; font-size:0; clear:both;"></div>
 </div> <!-- 코멘트 입력 끝 -->
 
-<script src="<?="$g4[path]/js/jquery.kcaptcha.js"?>"></script>
+<script src="<?="{$g4['path']}/js/jquery.kcaptcha.js"?>"></script>
 
 <script>
 var save_before = '';
